@@ -1,0 +1,12 @@
+# 编译产物
+obj/
+bin/
+*.o
+*.out
+*.exe
+
+# 临时文件
+*.tmp
+*.log
+.vscode/
+.DS_Store
