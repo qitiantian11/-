@@ -1,16 +1,7 @@
 #include "common.h"
 #include "menu.h"
 
-int main() {
-    printf("====================\n");
-    printf(" 图书馆管理系统 v1.0\n");
-    printf("====================\n");
-    printf("系统启动成功！\n");
-    return 0;
-}
-#include "common.h"
-#include "user.h"
-#include "menu.h"
+
 
 int main() {
     printf("正在加载系统数据...\n");
