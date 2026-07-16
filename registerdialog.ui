@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RegisterDialog</class>
+ <widget class="QDialog" name="RegisterDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>620</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>读者注册</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QDialog#RegisterDialog {
+    background-color: #eef3f8;
+    font-family: "Microsoft YaHei";
+}
+
+QFrame#registerCard {
+    background-color: white;
+    border: 1px solid #d9e2ea;
+    border-radius: 16px;
+}
+
+QLabel#titleLabel {
+    color: #33475b;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+QLabel#subtitleLabel {
+    color: #8793a0;
+    font-size: 13px;
+}
+
+QLabel {
+    color: #4b5967;
+    font-size: 14px;
+}
+
+QLineEdit {
+    background-color: #f7f9fb;
+    border: 1px solid #cfd8e3;
+    border-radius: 8px;
+    padding: 10px 12px;
+    min-height: 23px;
+    color: #273444;
+}
+
+QLineEdit:focus {
+    background-color: white;
+    border: 2px solid #5b8def;
+}
+
+QPushButton#registerButton {
+    background-color: #4f7cac;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 22px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+QPushButton#registerButton:hover {
+    background-color: #416f9e;
+}
+
+QPushButton#cancelButton {
+    background-color: #f4f6f8;
+    color: #54616e;
+    border: 1px solid #cfd8e3;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 15px;
+}
+
+QPushButton#cancelButton:hover {
+    background-color: #e8edf2;
+}
+   </string>
+  </property>
+
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="leftMargin">
+    <number>55</number>
+   </property>
+   <property name="topMargin">
+    <number>40</number>
+   </property>
+   <property name="rightMargin">
+    <number>55</number>
+   </property>
+   <property name="bottomMargin">
+    <number>40</number>
+   </property>
+
+   <item>
+    <widget class="QFrame" name="registerCard">
+     <layout class="QVBoxLayout" name="cardLayout">
+      <property name="leftMargin">
+       <number>45</number>
+      </property>
+      <property name="topMargin">
+       <number>35</number>
+      </property>
+      <property name="rightMargin">
+       <number>45</number>
+      </property>
+      <property name="bottomMargin">
+       <number>35</number>
+      </property>
+      <property name="spacing">
+       <number>12</number>
+      </property>
+
+      <item>
+       <widget class="QLabel" name="titleLabel">
+        <property name="text">
+         <string>创建读者账号</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="subtitleLabel">
+        <property name="text">
+         <string>填写下列信息完成注册</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <spacer name="topSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>16</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="accountLabel">
+        <property name="text">
+         <string>账号</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLineEdit" name="accountEdit">
+        <property name="placeholderText">
+         <string>请输入4至30位账号</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="passwordLabel">
+        <property name="text">
+         <string>密码</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLineEdit" name="passwordEdit">
+        <property name="placeholderText">
+         <string>请输入不少于6位的密码</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="confirmPasswordLabel">
+        <property name="text">
+         <string>确认密码</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLineEdit" name="confirmPasswordEdit">
+        <property name="placeholderText">
+         <string>请再次输入密码</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="nameLabel">
+        <property name="text">
+         <string>姓名</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLineEdit" name="nameEdit">
+        <property name="placeholderText">
+         <string>请输入真实姓名</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="studentNoLabel">
+        <property name="text">
+         <string>学号</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLineEdit" name="studentNoEdit">
+        <property name="placeholderText">
+         <string>请输入学号</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <spacer name="buttonSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>12</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+
+      <item>
+       <layout class="QHBoxLayout" name="buttonLayout">
+        <item>
+         <widget class="QPushButton" name="cancelButton">
+          <property name="text">
+           <string>取消</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="registerButton">
+          <property name="text">
+           <string>确认注册</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+
+ <resources/>
+ <connections/>
+</ui>

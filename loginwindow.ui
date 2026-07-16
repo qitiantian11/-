@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+
+ <class>LoginWindow</class>
+
+ <widget class="QWidget" name="LoginWindow">
+
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>560</height>
+   </rect>
+  </property>
+
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>560</height>
+   </size>
+  </property>
+
+  <property name="windowTitle">
+   <string>图书馆管理系统 - 登录</string>
+  </property>
+
+  <property name="styleSheet">
+   <string notr="true">
+QWidget#LoginWindow {
+    background-color: #EEF3F8;
+    font-family: "Microsoft YaHei";
+}
+
+/* 左侧蓝色区域 */
+QFrame#leftPanel {
+    background: qlineargradient(
+        x1:0,
+        y1:0,
+        x2:1,
+        y2:1,
+        stop:0 #355C7D,
+        stop:0.55 #4F7CAC,
+        stop:1 #6C8EBF
+    );
+
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+
+/* 右侧登录卡片 */
+QFrame#loginCard {
+    background-color: white;
+    border: 1px solid #DCE4EC;
+    border-radius: 16px;
+}
+
+/* 左侧系统名称 */
+QLabel#systemTitle {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* 左侧英文名称 */
+QLabel#systemSubtitle {
+    color: #E8F0F7;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* 左侧介绍标题 */
+QLabel#introTitle {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 左侧介绍内容 */
+QLabel#introText {
+    color: #EFF5FA;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* 左侧底部文字 */
+QLabel#projectLabel {
+    color: #DCE9F3;
+    font-size: 12px;
+}
+
+/* 登录标题 */
+QLabel#loginTitle {
+    color: #2F4054;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+/* 登录说明 */
+QLabel#loginHint {
+    color: #8A96A3;
+    font-size: 13px;
+}
+
+/* 普通文字 */
+QLabel {
+    color: #46525F;
+    font-size: 14px;
+}
+
+/* 输入框 */
+QLineEdit {
+    background-color: #F7F9FB;
+    border: 1px solid #CFD8E3;
+    border-radius: 8px;
+    padding: 10px 12px;
+    min-height: 24px;
+    color: #273444;
+    font-size: 14px;
+}
+
+QLineEdit:hover {
+    border: 1px solid #9FB3C8;
+}
+
+QLineEdit:focus {
+    background-color: white;
+    border: 2px solid #5B8DEF;
+}
+
+/* 登录按钮 */
+QPushButton#loginButton {
+    background-color: #4F7CAC;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+QPushButton#loginButton:hover {
+    background-color: #416F9E;
+}
+
+QPushButton#loginButton:pressed {
+    background-color: #355C7D;
+}
+
+/* 注册按钮 */
+QPushButton#registerButton {
+    background-color: white;
+    color: #4F7CAC;
+    border: 1px solid #4F7CAC;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+QPushButton#registerButton:hover {
+    background-color: #EDF4FB;
+}
+
+QPushButton#registerButton:pressed {
+    background-color: #DFEAF4;
+}
+
+/* 右侧下方提示文字 */
+QLabel#bottomHintLabel {
+    color: #98A3AE;
+    font-size: 12px;
+}
+   </string>
+  </property>
+
+  <layout class="QHBoxLayout" name="mainLayout">
+
+   <property name="spacing">
+    <number>0</number>
+   </property>
+
+   <property name="leftMargin">
+    <number>35</number>
+   </property>
+
+   <property name="topMargin">
+    <number>35</number>
+   </property>
+
+   <property name="rightMargin">
+    <number>35</number>
+   </property>
+
+   <property name="bottomMargin">
+    <number>35</number>
+   </property>
+
+   <!-- 左侧介绍区域 -->
+   <item>
+
+    <widget class="QFrame" name="leftPanel">
+
+     <property name="minimumSize">
+      <size>
+       <width>390</width>
+       <height>0</height>
+      </size>
+     </property>
+
+     <property name="maximumSize">
+      <size>
+       <width>390</width>
+       <height>16777215</height>
+      </size>
+     </property>
+
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+
+     <layout class="QVBoxLayout" name="leftLayout">
+
+      <property name="leftMargin">
+       <number>42</number>
+      </property>
+
+      <property name="topMargin">
+       <number>52</number>
+      </property>
+
+      <property name="rightMargin">
+       <number>42</number>
+      </property>
+
+      <property name="bottomMargin">
+       <number>42</number>
+      </property>
+
+      <property name="spacing">
+       <number>15</number>
+      </property>
+
+      <item>
+       <spacer name="titleTopSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="systemTitle">
+
+        <property name="text">
+         <string>图书馆管理系统</string>
+        </property>
+
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="systemSubtitle">
+
+        <property name="text">
+         <string>LIBRARY MANAGEMENT SYSTEM</string>
+        </property>
+
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <spacer name="introductionSpacer">
+
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>45</height>
+         </size>
+        </property>
+
+       </spacer>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="introTitle">
+
+        <property name="text">
+         <string>让图书管理更加简单</string>
+        </property>
+
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="introLine">
+
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>2</height>
+         </size>
+        </property>
+
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+
+        <property name="styleSheet">
+         <string notr="true">
+background-color: rgba(255, 255, 255, 90);
+         </string>
+        </property>
+
+        <property name="text">
+         <string/>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="introText">
+
+        <property name="text">
+         <string>本系统面向学校图书管理场景，
+为管理员和普通读者提供统一的操作平台。
+
+通过清晰的功能划分与简洁的界面设计，
+提高图书信息维护和借阅管理的效率。
+
+登录系统后，可根据不同用户身份
+进入对应的管理界面或读者服务界面。</string>
+        </property>
+
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <spacer name="leftBottomSpacer">
+
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>65</height>
+         </size>
+        </property>
+
+       </spacer>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="projectLabel">
+
+        <property name="text">
+         <string>大学生课程设计项目 · V1.0</string>
+        </property>
+
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+
+       </widget>
+      </item>
+
+     </layout>
+
+    </widget>
+
+   </item>
+
+   <!-- 右侧登录区域 -->
+   <item>
+
+    <widget class="QFrame" name="loginCard">
+
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+
+     <layout class="QVBoxLayout" name="cardLayout">
+
+      <property name="leftMargin">
+       <number>55</number>
+      </property>
+
+      <property name="topMargin">
+       <number>55</number>
+      </property>
+
+      <property name="rightMargin">
+       <number>55</number>
+      </property>
+
+      <property name="bottomMargin">
+       <number>45</number>
+      </property>
+
+      <property name="spacing">
+       <number>16</number>
+      </property>
+
+      <item>
+       <widget class="QLabel" name="loginTitle">
+
+        <property name="text">
+         <string>欢迎登录</string>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="loginHint">
+
+        <property name="text">
+         <string>请输入账号和密码，进入图书馆管理系统</string>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <spacer name="loginTopSpacer">
+
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>24</height>
+         </size>
+        </property>
+
+       </spacer>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="accountLabel">
+
+        <property name="text">
+         <string>账号</string>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLineEdit" name="accountEdit">
+
+        <property name="placeholderText">
+         <string>请输入您的账号</string>
+        </property>
+
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="passwordLabel">
+
+        <property name="text">
+         <string>密码</string>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLineEdit" name="passwordEdit">
+
+        <property name="placeholderText">
+         <string>请输入您的密码</string>
+        </property>
+
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <spacer name="buttonTopSpacer">
+
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>16</height>
+         </size>
+        </property>
+
+       </spacer>
+      </item>
+
+      <item>
+       <widget class="QPushButton" name="loginButton">
+
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+
+        <property name="text">
+         <string>登　录</string>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QPushButton" name="registerButton">
+
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+
+        <property name="text">
+         <string>注册读者账号</string>
+        </property>
+
+       </widget>
+      </item>
+
+      <item>
+       <spacer name="bottomHintSpacer">
+
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>8</height>
+         </size>
+        </property>
+
+       </spacer>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="bottomHintLabel">
+
+        <property name="text">
+         <string>首次使用系统的读者，请先注册账号</string>
+        </property>
+
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+
+       </widget>
+      </item>
+
+     </layout>
+
+    </widget>
+
+   </item>
+
+  </layout>
+
+ </widget>
+
+ <resources/>
+ <connections/>
+
+</ui>
